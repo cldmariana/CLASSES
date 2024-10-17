@@ -1,5 +1,9 @@
 import java.util.Scanner;
 
+//
+// UNFINISHED
+//
+
 public class Pyramid {
 
     int h;
