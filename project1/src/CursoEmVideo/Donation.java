@@ -1,3 +1,5 @@
+package CursoEmVideo;
+
 import java.util.Scanner;
 
 public class Donation {
