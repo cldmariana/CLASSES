@@ -1,8 +1,5 @@
 import java.util.Scanner;
-
-//
-// UNFINISHED
-//
+import java.lang.Math;
 
 public class Pyramid {
 
@@ -40,14 +37,15 @@ public class Pyramid {
         System.out.println("Apótema da base: " + m + " cm.");
 
 
-        g = (float) Math.pow(m, 2 + (Math.pow(h, 2)));
-        System.out.println("Apótema da pirâmide: " + g + " cm.");
+//        g = (float) Math.pow(m, 2 + (Math.pow(h, 2)));
+        g = (float) (Math.sqrt(m) + Math.sqrt(h));
         String apotema_piramide;
         apotema_piramide = String.format("%.2f", g);
         System.out.println("Apótema da pirâmide: " + apotema_piramide + " cm.");
 
 
-        a = (float) Math.pow(g, 2 + (Math.pow((Math.pow(l, 2)), 2)));
+//        a = (float) Math.pow(g, 2 + (Math.pow((Math.pow(l, 2)), 2)));
+        a = (float) (Math.sqrt(g) + (Math.sqrt(Math.sqrt(l))));
         String aresta_lateral;
         aresta_lateral = String.format("%.2f", a);
         System.out.println("Aresta lateral: " + aresta_lateral + " cm.");
@@ -62,7 +60,9 @@ public class Pyramid {
 
         Al = ((l * g / 2) * 4);
         At = Ab + Al;
-        System.out.println("Área total: " + At + " cm2.");
+        String a_total;
+        a_total = String.format("%.2f", At);
+        System.out.println("Área total: " + a_total + " cm2.");
 
 //        g = (float) sqrt(m^2 + h^2);
 //        System.out.print("Apótema da pirâmide: " + g + " cm.");
