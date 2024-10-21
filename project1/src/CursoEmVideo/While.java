@@ -9,7 +9,7 @@ public class While {
         while (mao < 5) {
             mao = mao + 1;
 
-            System.out.println(mao);
+            System.out.println("Mão = " + mao);
         }
     }
 }

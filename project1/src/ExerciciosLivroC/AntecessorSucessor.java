@@ -11,8 +11,7 @@ public class AntecessorSucessor {
         System.out.print("Digite um número para saber seu sucessor e antecessor: ");
         int num = scanner.nextInt();
 
-        int ant;
-        int suc;
+        int ant, suc;
 
         ant = num - 1;
         suc = num + 1;
