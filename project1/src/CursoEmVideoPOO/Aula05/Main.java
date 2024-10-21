@@ -13,7 +13,7 @@ public class Main {
         account1.currentStatus();
         account1.deposit(500);
 
-        account2.setUser("Maick");
+        account2.setUser("Tiago");
         account2.setAccountNum(84632);
         account2.openAccount("Saving Account");
         account2.currentStatus();

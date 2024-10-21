@@ -3,9 +3,9 @@ package CursoEmVideoPOO.Aula02;
 public class Pen {
 
     public String model;
-    public String color = "Blue";
+    public String color;
     private float tip;
-    protected int charge;
+    protected float charge;
     protected boolean covered;
 
 
@@ -17,6 +17,16 @@ public class Pen {
         this.model = model;
     }
 
+    public String getColor() {
+        return this.color;
+
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+
+    }
+
     public float getTip() {
         return this.tip;
     }
@@ -25,7 +35,7 @@ public class Pen {
         this.tip = p;
     }
 
-    public int getCharge() {
+    public float getCharge() {
         return this.charge;
     }
 
@@ -35,8 +45,9 @@ public class Pen {
 
 
     //constructor:
-    public Pen(String model, float tip, int charge, boolean covered) {
+    public Pen(String model, String color, float tip, float charge, boolean covered) {
         this.model = model;
+        this.color = color;
         this.tip = tip;
         this.charge = charge;
         this.covered = covered;
@@ -48,16 +59,20 @@ public class Pen {
         System.out.println("Pen model: " + this.model);
         System.out.println("Pen color: " + this.color);
         System.out.println("Pen tip: " + this.tip);
-        System.out.println("Pen charge: " + this.charge);
+        System.out.println("Pen charge: " + this.charge + "%");
         System.out.println("Is it covered? " + this.covered);
         System.out.println();
     }
 
     public void scribble() {
-        if (!covered) {
-            System.out.println("I can scribble!");
+        if (getCharge() >= 5) {
+            if (!covered) {
+                System.out.println("I can scribble!");
+            } else {
+                System.out.println("I cannot scribble, the pen is covered");
+            }
         } else {
-            System.out.println("I cannot scribble :(");
+            System.out.println("I cannot scribble, the pen is empty :(");
         }
     }
     //scribble = rabiscar
