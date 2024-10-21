@@ -54,7 +54,7 @@ public class ContaBanco {
     public void deposit(float deposit) {
         if (this.getAccountStatus()) {
             this.setBalance(this.getBalance() + deposit);
-            System.out.println("Deposit made successfully in " + this.getUser() + "'s account. New balance: " + this.getBalance());
+            System.out.println("Deposit made successfully in " + this.getUser() + "'s account. New balance U$: " + this.getBalance());
         } else {
             System.out.println("You can't deposit");
         }
@@ -64,7 +64,7 @@ public class ContaBanco {
         if (this.accountStatus) {
             if (this.getBalance() >= withdraw) {
                 this.setBalance(this.getBalance() - withdraw);
-                System.out.println("Withdrawal made successfully. New balance: " + this.getBalance());
+                System.out.println("Withdrawal made successfully. New balance U$: " + this.getBalance());
             } else {
                 System.out.println("Insufficient balance");
             }
@@ -73,18 +73,18 @@ public class ContaBanco {
         }
     }
 
-    public void payMonthly() {
-        int monthPay = 0;
+    public void monthlyPayment() {
+        int monthlyPayment = 0;
         if (Objects.equals(this.getAccountType(), "Current Account")) {
-            monthPay = 12;
+            monthlyPayment = 12;
         } else if (Objects.equals(this.getAccountType(), "Saving Account")) {
-            monthPay = 20;
+            monthlyPayment = 20;
         }
         if (this.getAccountStatus()) {
-            if (monthPay <= this.getBalance()) {
-                this.setBalance(this.getBalance() - monthPay);
+            if (monthlyPayment <= this.getBalance()) {
+                this.setBalance(this.getBalance() - monthlyPayment);
                 System.out.println("Monthly payment made successfully. Your new balance is U$" + this.getBalance());
-            } else if (this.getBalance() < monthPay) {
+            } else if (this.getBalance() < monthlyPayment) {
                 System.out.println("Insufficient balance");
             } else {
                 System.out.println("You can't pay a closed account");
@@ -93,13 +93,13 @@ public class ContaBanco {
     }
 
 //    if (this.accountStatus) {
-//        if (balance > monthPay && Objects.equals(accountType, "CA")) {
-//            this.monthPay = 12;
-//            setBalance(getBalance() - monthPay);
+//        if (balance > monthlyPayment && Objects.equals(accountType, "CA")) {
+//            this.monthlyPayment = 12;
+//            setBalance(getBalance() - monthlyPayment);
 //            System.out.println("Monthly payment made successfully. Your new balance is U$" + getBalance());
-//        } else if (balance > monthPay && Objects.equals(accountType, "SA")) {
+//        } else if (balance > monthlyPayment && Objects.equals(accountType, "SA")) {
 //            this.monthPay = 20;
-//            setBalance(getBalance() - monthPay);
+//            setBalance(getBalance() - monthlyPayment);
 //            System.out.println("Monthly payment made successfully. Your new balance is U$" + getBalance());
 //        } else {
 //            System.out.println("Insufficient balance");
